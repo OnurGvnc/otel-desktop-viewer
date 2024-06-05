@@ -36,7 +36,7 @@ build-go:
 .PHONY: test-go
 test-go:
 	go test ./...
-	
+
 .PHONY: run-go
 run-go:
 	SERVE_FROM_FS=true go run ./...
@@ -47,7 +47,7 @@ build-js:
 
 .PHONY: watch-js
 watch-js:
-	cd desktopexporter; npx esbuild --watch --bundle app/main.tsx app/main.css --outdir=static
+	cd desktopexporter; npx esbuild --watch --bundle app/main.tsx app/main.css --outdir=static --external:assets/MonaspaceNeon-*
 
 .PHONY: format-js
 format-js:

@@ -6,6 +6,7 @@ export type TraceSummary = {
   rootEndTime: string;
   spanCount: number;
   traceID: string;
+  urlPath: string;
 };
 
 export type TraceSummaries = {

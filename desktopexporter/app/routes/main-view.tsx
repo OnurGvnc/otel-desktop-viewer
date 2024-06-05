@@ -138,6 +138,7 @@ function generateTraceSummaryWithUIData(
       rootDurationString: durationString,
       spanCount: traceSummary.spanCount,
       traceID: traceSummary.traceID,
+      urlPath: traceSummary.urlPath,
     };
   }
   return {

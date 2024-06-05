@@ -32,7 +32,7 @@ function LinkItem(props: LinkItemProps) {
 
   return (
     <AccordionItem>
-      <AccordionButton>
+      <AccordionButton paddingX="4px" paddingBottom={0}>
         <Box
           flex="1"
           textAlign="left"
@@ -46,7 +46,7 @@ function LinkItem(props: LinkItemProps) {
         </Box>
         <AccordionIcon />
       </AccordionButton>
-      <AccordionPanel>
+      <AccordionPanel padding="4px">
         <SpanField
           fieldName="trace state"
           fieldValue={link.traceState}
@@ -78,7 +78,7 @@ export function LinksPanel(props: LinksPanelProps) {
   ));
 
   return (
-    <TabPanel paddingX="0px">
+    <TabPanel data-testid="links-panel" padding="6px 0px 0px" >
       <UnderConstructionAlert />
       <Accordion allowMultiple>
         <List>{linkItemList}</List>

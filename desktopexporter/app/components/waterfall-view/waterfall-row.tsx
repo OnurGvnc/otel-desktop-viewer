@@ -23,7 +23,7 @@ type WaterfallRowProps = {
 
 export function WaterfallRow({ index, style, data }: WaterfallRowProps) {
   let selectedColour = useColorModeValue("pink.100", "pink.900");
-  let oddStripeColour = useColorModeValue("gray.50", "gray.700");
+  let oddStripeColour = useColorModeValue("gray.50", "gray.900");
   // Set the background colour to make the list striped.
   let backgroundColour = index % 2 ? "" : oddStripeColour;
 
@@ -43,7 +43,7 @@ export function WaterfallRow({ index, style, data }: WaterfallRowProps) {
     let { spanData } = span;
 
     // Set the margin to indicate parent/children relationship between spans
-    let paddingLeft = depth * 25;
+    let paddingLeft = depth * 10;
 
     //Set the style for the selected item
     if (!!selectedSpanID && selectedSpanID === spanID) {
@@ -64,32 +64,45 @@ export function WaterfallRow({ index, style, data }: WaterfallRowProps) {
         bgColor={backgroundColour}
         paddingLeft={`${paddingLeft}px`}
         onClick={() => setSelectedSpanID(spanID)}
+        cursor="default"
       >
         <Flex
           width={spanNameColumnWidth - paddingLeft}
-          alignItems="center"
+          alignItems="start"
           flexGrow="1"
           flexShrink="0"
+          direction="column"
+          paddingTop="8px"
         >
           <Text
             paddingX={2}
             noOfLines={2}
             fontSize="sm"
+            lineHeight={1}
           >
             {nameLabel}
           </Text>
-        </Flex>
-        <Flex
-          width={serviceNameColumnWidth}
-          alignItems="center"
-          flexGrow="1"
-          flexShrink="0"
-        >
           <Text
             paddingX={2}
-            fontSize="sm"
+            paddingTop="2px"
+            noOfLines={2}
+            fontSize="xs"
+            lineHeight={1}
+            opacity={0.5}
+            width="5000px"
           >
             {resourceLabel}
+          </Text>
+          <Text
+            paddingX={2}
+            paddingTop="2px"
+            noOfLines={2}
+            fontSize="xs"
+            lineHeight={1}
+            opacity={0.5}
+            width="5000px"
+          >
+            {span?.spanData?.attributes?.["url.path"]??""}
           </Text>
         </Flex>
         <DurationBar

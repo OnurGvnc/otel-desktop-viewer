@@ -21,10 +21,10 @@ export function WaterfallView(props: WaterfallViewProps) {
   let spanListRef = React.createRef<FixedSizeList>();
   const size = useSize(containerRef);
 
-  const waterfallItemHeight = 50;
+  const waterfallItemHeight = 48;
   const headerRowHeight = 30;
   const spanNameColumnWidth = 300;
-  const serviceNameColumnWidth = 200;
+  const serviceNameColumnWidth = 0;
 
   let { orderedSpans, traceTimeAttributes, selectedSpanID, setSelectedSpanID } =
     props;

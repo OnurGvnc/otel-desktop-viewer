@@ -29,6 +29,7 @@ export type TraceSummaryWithUIData =
       rootDurationString: string;
       spanCount: number;
       traceID: string;
+      urlPath: string;
     }
   | {
       hasRootSpan: false;

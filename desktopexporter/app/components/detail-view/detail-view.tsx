@@ -19,16 +19,18 @@ export function DetailView(props: DetailViewProps) {
   let numLinks = span.links.length;
   return (
     <Flex
+      data-testid="detail-view"
       grow="0"
       shrink="1"
       basis="350px"
       height="100vh"
-      paddingTop="30px"
+      paddingTop="8px"
+      paddingLeft="6px"
       overflowY="scroll"
     >
       <Tabs
         colorScheme="pink"
-        margin={3}
+        margin={0}
         size="sm"
         variant="soft-rounded"
         width="100vw"

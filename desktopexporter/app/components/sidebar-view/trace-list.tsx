@@ -16,7 +16,7 @@ import { TraceSummaryWithUIData } from "../../types/ui-types";
 import { useKeyCombo, useKeyPress } from "../../utils/use-key-press";
 import { KeyboardHelp } from "../modals/keyboard-help";
 
-const sidebarSummaryHeight = 120;
+const sidebarSummaryHeight = 100;
 const dividerHeight = 1;
 
 type SidebarRowData = {
@@ -55,10 +55,13 @@ function SidebarRow({ index, style, data }: SidebarRowProps) {
       .replaceAll(".", ".\u200B");
 
     return (
-      <div style={style}>
+      <div data-testid="sidebar-row" style={style}>
         <Divider
-          height={dividerHeight}
-          borderColor={dividerColour}
+          data-testid="divider"
+          // height={`${dividerHeight}px`}
+          padding={0}
+          margin={0}
+          backgroundColor={dividerColour}
         />
         <LinkBox
           display="flex"
@@ -66,8 +69,11 @@ function SidebarRow({ index, style, data }: SidebarRowProps) {
           justifyContent="center"
           bgColor={backgroundColour}
           height={`${sidebarSummaryHeight}px`}
-          paddingX="20px"
+          paddingX="4px"
         >
+          <Text fontSize="xs">
+            <strong>{traceSummary.urlPath}</strong>
+          </Text>
           <Text
             fontSize="xs"
             noOfLines={1}
@@ -234,13 +240,22 @@ export function TraceList(props: TraceListProps) {
 
   let itemHeight = sidebarSummaryHeight + dividerHeight;
 
+  let height = 0
+  if (size?.height && itemHeight*itemData.traceSummaries.length>size.height) {
+    height = size.height
+  }
+  else {
+    height = itemHeight*itemData.traceSummaries.length
+  }
+
   return (
     <Flex
       ref={containerRef}
       height="100%"
+      data-testid="trace-list"
     >
       <FixedSizeList
-        height={size ? size.height : 0}
+        height={height}
         itemData={itemData}
         itemCount={props.traceSummaries.length}
         itemSize={itemHeight}

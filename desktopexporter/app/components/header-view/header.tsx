@@ -8,9 +8,10 @@ type HeaderProps = {
 export function Header(props: HeaderProps) {
   return (
     <Flex
+      data-testid="header"
       align="center"
-      height="100px"
-      paddingX="24px"
+      height="30px"
+      paddingX="6px"
     >
       <Text
         fontSize="lg"

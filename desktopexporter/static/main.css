@@ -5,3 +5,46 @@ body {
   margin: 0px;
   overflow: hidden;
 }
+@font-face {
+  font-family: "MonospaceNeon";
+  src:
+    url(assets/MonaspaceNeon-Regular.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-SemiWideSemiBoldItalic.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-WideBold.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-WideBoldItalic.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-WideExtraBold.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-WideExtraBoldItalic.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-WideExtraLight.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-WideExtraLightItalic.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-WideItalic.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-WideLight.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-WideLightItalic.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-WideMedium.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-WideMediumItalic.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-WideRegular.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-WideSemiBold.woff2) format("woff2"),
+    url(assets/MonaspaceNeon-WideSemiBoldItalic.woff2) format("woff2");
+  font-weight:
+    normal,
+    600,
+    700,
+    700,
+    800,
+    800,
+    200,
+    200,
+    300,
+    300,
+    400,
+    400,
+    500,
+    500,
+    600,
+    600;
+}
+body {
+  font-family: "MonospaceNeon", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  background-color: #000;
+}

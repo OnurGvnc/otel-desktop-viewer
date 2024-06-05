@@ -37,6 +37,7 @@ export function FieldsPanel(props: FieldsPanelProps) {
       marginStart={2}
       colorScheme="cyan"
       variant="subtle"
+      size="sm"
     >
       root
     </Tag>
@@ -54,6 +55,7 @@ export function FieldsPanel(props: FieldsPanelProps) {
       <SpanField
         fieldName={key}
         fieldValue={value}
+        attributes={span.attributes}
       />
     </li>
   ));
@@ -81,13 +83,13 @@ export function FieldsPanel(props: FieldsPanelProps) {
   );
 
   return (
-    <TabPanel paddingX="0px">
+    <TabPanel data-testid="fields-panel" padding="6px 0px 0px" >
       <Accordion
-        defaultIndex={[0]}
+        defaultIndex={[0,1,2]}
         allowMultiple
       >
-        <AccordionItem>
-          <AccordionButton>
+        <AccordionItem data-testid="span-data" >
+          <AccordionButton paddingX="4px" paddingBottom={0}>
             <Box
               flex="1"
               textAlign="left"
@@ -95,13 +97,14 @@ export function FieldsPanel(props: FieldsPanelProps) {
               <Heading
                 lineHeight="revert"
                 size="sm"
+                color="orange.400"
               >
                 Span Data{rootTag}
               </Heading>
             </Box>
             <AccordionIcon />
           </AccordionButton>
-          <AccordionPanel>
+          <AccordionPanel padding="4px">
             <SpanField
               fieldName="name"
               fieldValue={span.name}
@@ -163,16 +166,16 @@ export function FieldsPanel(props: FieldsPanelProps) {
           </AccordionPanel>
         </AccordionItem>
         <AccordionItem>
-          <AccordionButton>
+          <AccordionButton paddingX="4px" paddingBottom={0}>
             <Box
               flex="1"
               textAlign="left"
             >
-              <Heading size="sm">Resource Data</Heading>
+              <Heading size="sm" color="orange.400">Resource Data</Heading>
             </Box>
             <AccordionIcon />
           </AccordionButton>
-          <AccordionPanel>
+          <AccordionPanel padding="4px" paddingBottom={0}>
             <List>{resourceAttributes}</List>
             <SpanField
               fieldName="dropped attributes count"
@@ -182,16 +185,16 @@ export function FieldsPanel(props: FieldsPanelProps) {
           </AccordionPanel>
         </AccordionItem>
         <AccordionItem>
-          <AccordionButton>
+          <AccordionButton paddingX="4px" paddingBottom={0}>
             <Box
               flex="1"
               textAlign="left"
             >
-              <Heading size="sm">Scope Data</Heading>
+              <Heading size="sm" color="orange.400">Scope Data</Heading>
             </Box>
             <AccordionIcon />
           </AccordionButton>
-          <AccordionPanel>
+          <AccordionPanel padding="4px">
             <SpanField
               fieldName="scope name"
               fieldValue={span.scope.name}

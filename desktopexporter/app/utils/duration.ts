@@ -53,6 +53,10 @@ export function getDurationString(durationNs: number) {
   if (durationNs === null || durationNs < 0) {
     return "";
   }
+  return `${(durationNs / 1e6).toLocaleString('en-US',{
+    maximumFractionDigits: 1,
+    minimumFractionDigits: 0
+  })} ms`;
 
   // Label in seconds
   if (durationNs >= 1e9) {

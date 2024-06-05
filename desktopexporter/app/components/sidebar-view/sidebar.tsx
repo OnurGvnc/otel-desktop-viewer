@@ -5,8 +5,8 @@ import { TraceList } from "./trace-list";
 import { TraceSummaryWithUIData } from "../../types/ui-types";
 import { SidebarHeader } from "./sidebar-header";
 
-const sidebarFullWidth = 350;
-const sidebarCollapsedWidth = 70;
+const sidebarFullWidth = 270;
+const sidebarCollapsedWidth = 50;
 
 type SidebarProps = {
   isFullWidth: boolean;
@@ -23,6 +23,7 @@ export function Sidebar(props: SidebarProps) {
   if (isFullWidth) {
     return (
       <Flex
+        data-testid="sidebar"
         backgroundColor={sidebarColour}
         flexShrink="0"
         direction="column"

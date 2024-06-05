@@ -42,11 +42,12 @@ function EventDotsList(props: EventDotsListProps) {
           placement="top"
         >
           <Circle
-            size="18px"
+            size="15px"
             bg="whiteAlpha.400"
             border="solid 1px"
             borderColor="cyan.800"
             position="absolute"
+            top="1px"
             left={`${eventOffsetPercent}%`}
             transformOrigin="center"
             transform="translate(-50%)"
@@ -104,14 +105,16 @@ export function DurationBar(props: DurationBarProps) {
 
   return (
     <Flex
+      data-testid="duration-bar"
       border="0"
       marginX={2}
-      marginY="16px"
+      marginTop="4px"
       width="100%"
+      height="17px"
     >
       <Box
         bgColor={durationBarColour}
-        borderRadius="md"
+        borderRadius="4px"
         overflow="visible"
         position="relative"
         left={`${barOffsetPercent}%`}
@@ -129,6 +132,7 @@ export function DurationBar(props: DurationBarProps) {
             fontSize="xs"
             fontWeight="700"
             paddingLeft={2}
+            paddingTop="2px"
             color={labelTextColour}
             whiteSpace="nowrap"
           >

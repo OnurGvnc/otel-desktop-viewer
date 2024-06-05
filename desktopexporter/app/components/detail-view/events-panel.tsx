@@ -36,7 +36,7 @@ function EventItem(props: EventItemProps) {
 
   return (
     <AccordionItem>
-      <AccordionButton>
+      <AccordionButton paddingX="4px" paddingBottom={0}>
         <Box
           flex="1"
           textAlign="left"
@@ -46,7 +46,7 @@ function EventItem(props: EventItemProps) {
         </Box>
         <AccordionIcon />
       </AccordionButton>
-      <AccordionPanel>
+      <AccordionPanel padding="4px" paddingBottom={0}>
         <SpanField
           fieldName="timestamp"
           fieldValue={event.timestamp}
@@ -83,7 +83,7 @@ export function EventsPanel(props: EventsPanelProps) {
   ));
 
   return (
-    <TabPanel paddingX="0px">
+    <TabPanel data-testid="events-panel" padding="6px 0px 0px" >
       <Accordion allowMultiple>
         <List>{eventItemList}</List>
       </Accordion>

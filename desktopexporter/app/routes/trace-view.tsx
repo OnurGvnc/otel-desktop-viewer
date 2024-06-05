@@ -57,7 +57,7 @@ export default function TraceView() {
       templateAreas={`"header detail"
                        "main detail"`}
       gridTemplateColumns={"1fr 350px"}
-      gridTemplateRows={"100px 1fr"}
+      gridTemplateRows={"30px 1fr"}
       gap={"0"}
       height={"100vh"}
       width={"100vw"}
@@ -67,7 +67,7 @@ export default function TraceView() {
       </GridItem>
       <GridItem
         area={"main"}
-        marginLeft="20px"
+        marginLeft="6px"
       >
         <WaterfallView
           orderedSpans={orderedSpans}

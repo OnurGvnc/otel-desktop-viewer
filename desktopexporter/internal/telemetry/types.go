@@ -95,6 +95,8 @@ type TraceSummary struct {
 
 	SpanCount uint32 `json:"spanCount"`
 	TraceID   string `json:"traceID"`
+
+	UrlPath string `json:"urlPath"`
 }
 
 type TraceData struct {

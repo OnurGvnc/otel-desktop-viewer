@@ -107,7 +107,7 @@ export function HeaderRow(props: HeaderRowProps) {
           name
         </Heading>
       </Flex>
-      <Flex
+      {/* <Flex
         width={serviceNameColumnWidth}
         alignItems="center"
       >
@@ -117,7 +117,7 @@ export function HeaderRow(props: HeaderRowProps) {
         >
           service.name
         </Heading>
-      </Flex>
+      </Flex> */}
       <DurationIndicator traceDuration={traceDuration} />
     </Flex>
   );

@@ -16,9 +16,14 @@ func (trace *TraceData) GetTraceSummary() TraceSummary {
 			RootEndTime:     time.Time{},
 			SpanCount:       uint32(len(trace.Spans)),
 			TraceID:         trace.TraceID,
+			UrlPath:         "",
 		}
 	}
 
+	urlPath := ""
+	if value, ok := rootSpan.Attributes["url.path"].(string); ok {
+		urlPath = value
+	}
 	return TraceSummary{
 		HasRootSpan:     true,
 		RootServiceName: rootSpan.GetServiceName(),
@@ -27,6 +32,7 @@ func (trace *TraceData) GetTraceSummary() TraceSummary {
 		RootEndTime:     rootSpan.EndTime,
 		SpanCount:       uint32(len(trace.Spans)),
 		TraceID:         trace.TraceID,
+		UrlPath:         urlPath,
 	}
 }
 

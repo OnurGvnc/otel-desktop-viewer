@@ -49,8 +49,8 @@ export function SidebarHeader(props: SidebarHeaderProps) {
             variant="ghost"
             colorScheme="pink"
             fontWeight="normal"
-            leftIcon={<DeleteIcon />}
-            marginStart="10px"
+            leftIcon={<DeleteIcon height={3} marginBottom={1} />}
+            marginStart="2px"
             onClick={clearTraceData}
           >
             <Text

@@ -2,6 +2,8 @@ module github.com/CtrlSpice/otel-desktop-viewer
 
 go 1.19
 
+replace github.com/CtrlSpice/otel-desktop-viewer/desktopexporter => ./desktopexporter
+
 require (
 	github.com/CtrlSpice/otel-desktop-viewer/desktopexporter v0.0.0-20231031015839-a93f76367789
 	github.com/stretchr/testify v1.8.2
